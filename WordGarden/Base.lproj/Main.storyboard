@@ -22,7 +22,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="112" translatesAutoresizingMaskIntoConstraints="NO" id="sHy-Gn-63o">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="14.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Guessed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nY-Ku-ESQ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Words Guessed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nY-Ku-ESQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="146.5" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -31,7 +31,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words In Game: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8U-lz-Qfo">
                                                 <rect key="frame" x="258.5" y="0.0" width="100.5" height="14.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100.5" id="LzD-OU-3t8"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100.5" id="LzD-OU-3t8"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -45,7 +45,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="112" translatesAutoresizingMaskIntoConstraints="NO" id="oku-Hb-EbJ">
                                         <rect key="frame" x="0.0" y="22.5" width="359" height="8.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Missed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ns-Gpi">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Words Missed: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq7-ns-Gpi">
                                                 <rect key="frame" x="0.0" y="0.0" width="134" height="8.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -54,7 +54,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words Remaining: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-Dx-uPc">
                                                 <rect key="frame" x="246" y="0.0" width="113" height="8.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="113" id="ea0-tt-Tmu"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="ea0-tt-Tmu"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
@@ -84,7 +84,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="flower8" translatesAutoresizingMaskIntoConstraints="NO" id="ZzG-nf-mUh">
-                                <rect key="frame" x="0.0" y="37" width="375" height="401"/>
+                                <rect key="frame" x="0.0" y="266" width="375" height="401"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-S1-CwD">
                                 <rect key="frame" x="108" y="158.5" width="159" height="30"/>
@@ -96,7 +96,11 @@
                                             <constraint firstAttribute="height" constant="30" id="kss-yV-eco"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="doneKeyPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="Dmf-MB-U6Y"/>
+                                            <action selector="guessedLetterFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="ra0-hK-qjE"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHk-Di-xZg">
                                         <rect key="frame" x="57" y="0.0" width="102" height="30"/>
@@ -110,7 +114,7 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFc-fd-Rwz">
                                 <rect key="frame" x="142.5" y="196.5" width="90" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="9BV-Aq-sd2"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="9BV-Aq-sd2"/>
                                     <constraint firstAttribute="height" constant="30" id="rwk-kt-gF0"/>
                                 </constraints>
                                 <state key="normal" title="Play Again"/>

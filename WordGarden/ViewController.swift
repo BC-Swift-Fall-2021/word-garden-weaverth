@@ -31,11 +31,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let text = guessLetterTextField.text!
+        guessLetterButton.isEnabled = !(text.isEmpty)
     }
 
-// Set up test
+    func updateUIAfterGuess(){
+        guessLetterTextField.resignFirstResponder()
+        guessLetterTextField.text! = ""
+        guessLetterButton.isEnabled = false
+    }
+    
+    @IBAction func guessedLetterFieldChanged(_ sender: UITextField) {
+        let text = guessLetterTextField.text!
+        guessLetterButton.isEnabled = !(text.isEmpty)
+    }
+    
+    @IBAction func doneKeyPressed(_ sender: UITextField) {
+        updateUIAfterGuess()
+    }
+    
+    
     @IBAction func guessALetterButtonPressed(_ sender: UIButton) {
+        // Dismisses the keyboard
+        updateUIAfterGuess()
     }
     
     @IBAction func playAgainButtonPressed(_ sender: Any) {
